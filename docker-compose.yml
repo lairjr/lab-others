@@ -1,0 +1,11 @@
+version: '3'
+services:
+  api:
+    build: .
+    command: rackup -o 0.0.0.0
+    ports:
+    - "9292:9292"
+    volumes:
+    - .:/webapp
+  db:
+    image: mongo
